@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dotenv.dotenv-vscode",
+    "cschlosser.doxdocgen",
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "christian-kohler.path-intellisense",
+    "zhang-renyang.esm-cjs-converter"
+  ]
+}
