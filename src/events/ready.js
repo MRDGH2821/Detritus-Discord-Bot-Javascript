@@ -1,8 +1,14 @@
-import { GatewayClientEvents, ShardClient } from "detritus-client";
-import { ClientEvents } from "detritus-client/lib/constants";
+const { ClientEvents } = require("detritus-client/lib/constants");
 const readyEvent = {
   event: ClientEvents.GATEWAY_READY,
-  run(args: GatewayClientEvents.GatewayReady & { shard: ShardClient }) {
+  /**
+   *
+   * @param {Object} args
+   * @param {import("detritus-client").ShardClient} args.shard
+   * @param {import("detritus-client").GatewayClientEvents.GatewayReady} args.raw
+   * @returns {void}
+   */
+  run(args) {
     const { shard } = args;
     console.log(
       "Logged in as:",
@@ -13,4 +19,4 @@ const readyEvent = {
     });
   },
 };
-export default readyEvent;
+module.exports = readyEvent;

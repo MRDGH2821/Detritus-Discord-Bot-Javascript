@@ -17,10 +17,8 @@ async function main() {
   await readdir(eventsDir).then((files) =>
     files.forEach((file) => {
       const path = resolve(eventsDir, file);
-      import(path).then((event) => {
-        const fn = event.default;
-        bot.client.on(fn.event, fn.run);
-      });
+      const event = require(path);
+      bot.client.on(event.event, event.run);
     })
   );
 
